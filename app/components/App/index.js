@@ -33,34 +33,38 @@ export default class Main extends Component{
         }
     }
     handle_operator = (operator) => {
-        if (operator == 'divide'){
-            this.setState({
-                tmp_num: this.state.number,
-                expression: this.state.expression + '÷',
-                number: '',
-                operator
-            });
-        } else if ( operator == 'times'){
-            this.setState({
-                tmp_num: this.state.number,
-                expression: this.state.expression + 'x',
-                number: '',
-                operator
-            });
-        } else if (operator == 'minus'){
-            this.setState({
-                tmp_num: this.state.number,
-                expression: this.state.expression + '-',
-                number: '',
-                operator
-            });
-        } else if( operator == 'add'){
-            this.setState({
-                tmp_num: this.state.number,
-                expression: this.state.expression + '+',
-                number: '',
-                operator
-            });
+        if(this.state.operator.length == 0){
+            if (operator == 'divide'){
+                this.setState({
+                    tmp_num: this.state.number,
+                    expression: this.state.expression + '÷',
+                    number: '',
+                    operator
+                });
+            } else if ( operator == 'times'){
+                this.setState({
+                    tmp_num: this.state.number,
+                    expression: this.state.expression + 'x',
+                    number: '',
+                    operator
+                });
+            } else if (operator == 'minus'){
+                this.setState({
+                    tmp_num: this.state.number,
+                    expression: this.state.expression + '-',
+                    number: '',
+                    operator
+                });
+            } else if( operator == 'add'){
+                this.setState({
+                    tmp_num: this.state.number,
+                    expression: this.state.expression + '+',
+                    number: '',
+                    operator
+                });
+            }
+        } else {
+            ToastAndroid.show('One calculation at a time', ToastAndroid.SHORT)
         }
     }
     handle_clear = () => {
@@ -76,15 +80,21 @@ export default class Main extends Component{
         const number_state = this.state.number.substring(0, this.state.number.length - 1)
         const expression_state = this.state.expression.substring(0, this.state.expression.length - 1)
         const operators = ['+','-','x','÷']
-        if (operators.indexOf(this.state.expression.slice(-1)) !== -1){
+        const operator_in_exp = ['+','-','x','÷'].indexOf(
+            this.state.expression.slice(-1)
+        ) !== -1;
+
+        if(operator_in_exp){
             this.setState({
                 expression: expression_state,
-                operator: ''
+                number: this.state.tmp_num,
+                tmp_num: '',
+                operator: '',
             });
         } else {
             this.setState({
                 number: number_state,
-                expression: number_state
+                expression: expression_state
             });
         }
     }

@@ -72,9 +72,9 @@ export default class Button extends Component{
                 </View>
 
                 <View style={style.row}>
-                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('6')}>
+                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('4')}>
                         <View style={{...style.column, flex: 1}}>
-                            <Text style={style.text}>6</Text>
+                            <Text style={style.text}>4</Text>
                         </View>
                     </TouchableWithoutFeedback>
 
@@ -84,9 +84,9 @@ export default class Button extends Component{
                         </View>
                     </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('4')}>
+                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('6')}>
                         <View style={{...style.column, flex: 1}}>
-                            <Text style={style.text}>4</Text>
+                            <Text style={style.text}>6</Text>
                         </View>
                     </TouchableWithoutFeedback>
 
@@ -98,9 +98,9 @@ export default class Button extends Component{
                 </View>
 
                 <View style={style.row}>
-                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('3')}>
+                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('1')}>
                         <View style={{...style.column, flex: 1}}>
-                            <Text style={style.text}>3</Text>
+                            <Text style={style.text}>1</Text>
                         </View>
                     </TouchableWithoutFeedback>
 
@@ -110,9 +110,9 @@ export default class Button extends Component{
                         </View>
                     </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('1')}>
+                    <TouchableWithoutFeedback onPress={() => this.handleNumberClick('3')}>
                         <View style={{...style.column, flex: 1}}>
-                            <Text style={style.text}>1</Text>
+                            <Text style={style.text}>3</Text>
                         </View>
                     </TouchableWithoutFeedback>
 
